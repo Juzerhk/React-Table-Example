@@ -38,8 +38,8 @@ componentDidMount() {
 
     if (data !== null) {
         var filteredData =  [].concat.apply([], data).filter((dataFilter) => dataFilter.address.city !== 'Bielefeld');
-        /* Wanted to use .flat() of javascript which flattens the array but
-           since it only works with latest browser hence not using it 
+        /* Wanted to use .flat() of javascript which flattens the array but it throws error
+           when running the test case since it only works with latest browser hence not using it 
         */
         // var filteredData = data.flat(Infinity).filter((dataFilter) => dataFilter.address.city !== 'Bielefeld');
         // console.log('After Filtering', filteredData);

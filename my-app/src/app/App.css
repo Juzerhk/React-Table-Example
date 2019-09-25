@@ -3,9 +3,16 @@
   background-color: #F8F8FF;
 }
 
+.App-header {
+  min-height: 96vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
 td:hover, td:hover span {
   color: #9A1A4A;
-
 }
 
 td{
@@ -13,14 +20,6 @@ td{
   white-space: nowrap;
   overflow: hidden;
   text-size-adjust: 2px;
-}
-.App-header {
-  min-height: 96vh;
-  /* display: flex; */
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
 thead {

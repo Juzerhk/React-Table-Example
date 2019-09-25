@@ -31,3 +31,9 @@ it("should render initial layout", () => {
     await expect(Array.isArray(result)).toBe(true);
   });
 
+  it('api call test',  async () => {
+    const result = await getRestaurantData(link);
+    await expect(result.length).toBeGreaterThan(0);
+    await expect(Array.isArray(result)).toBe(true);
+  });
+
