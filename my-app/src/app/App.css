@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  background-color: #F8F8FF;
+}
+
+td:hover, td:hover span {
+  color: #9A1A4A;
+
+}
+
+td{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-size-adjust: 2px;
+}
+.App-header {
+  min-height: 96vh;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+thead {
+  background: #395870;
+  color: #fff;
+}
+
+.react-bs-table-container{
+  margin: 35px;
+}
+
+.react-bs-table-sizePerPage-dropdown{
+  float: left;
+  margin-bottom: 6rem;
+}

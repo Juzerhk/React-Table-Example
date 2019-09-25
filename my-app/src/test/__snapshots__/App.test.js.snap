@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render initial layout 1`] = `
+Array [
+  <div
+    className="App"
+  >
+    <header
+      className="App-header"
+    >
+      <a
+        href="/"
+      >
+        <img
+          alt=""
+          src={
+            Object {
+              "ReactComponent": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "render": [Function],
+              },
+              "__esModule": true,
+              "default": "52172.svg",
+            }
+          }
+        />
+      </a>
+      <h2>
+        Waracle's Restaurant List
+      </h2>
+      <ForwardRef
+        animation="grow"
+      />
+    </header>
+    <footer
+      style={
+        Object {
+          "fontStyle": "italic",
+        }
+      }
+    >
+      ©Copyright 2019 Juzer Kanchwala All Rights Reserved
+    </footer>
+  </div>,
+]
+`;
