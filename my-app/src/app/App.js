@@ -7,7 +7,8 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 const link = "https://waraclecodetesting.azurewebsites.net/api/restaurants";
 
 class App extends React.Component {
-  
+  _isMounted= false;
+
 constructor() {
   super()
   this.state = {
@@ -16,18 +17,26 @@ constructor() {
 }
 
 componentDidMount() {
+    this._isMounted = true;
+
   getRestaurantData(link)
-    .then(data => (
-      this.setState({
-        /* Import bigArray from fetchData.js to display more data in the table and
-            then uncomment Line A and comment Line B
-        */
-        // restaurantData: this.filterRestaurantData(bigArray),  // Line A
-        restaurantData: this.filterRestaurantData(data),  // Line B
-      })  
-    ))
+    .then(data => { 
+        if(this._isMounted) {
+            this.setState({
+              /* Import bigArray from fetchData.js to display more data in the table and
+                  then uncomment Line A and comment Line B
+              */
+              // restaurantData: this.filterRestaurantData(bigArray),  // Line A
+              restaurantData: this.filterRestaurantData(data),  // Line B
+            })  
+          }
+      })
   }
   
+  componentWillUnmount(){
+    this._isMounted = false;
+  }
+
   flattenArray(array, depth, currentDepth = 0) {
     if (currentDepth === depth) {
       return array;
