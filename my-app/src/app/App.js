@@ -28,6 +28,18 @@ componentDidMount() {
     ))
   }
   
+  flattenArray(array, depth, currentDepth = 0) {
+    if (currentDepth === depth) {
+      return array;
+    }
+  
+    return array.reduce((acc, item) => {
+      return acc.concat(
+        Array.isArray(item) ? this.flattenArray(item, depth, currentDepth + 1) : item
+      );
+    }, []);
+  }
+
   /**
    * Function used to filter the data array as per the criteria
    * All the cities with bielefeld are filtered out
@@ -37,7 +49,7 @@ componentDidMount() {
     // console.log('Before Filtering', data);
 
     if (data !== null) {
-        var filteredData =  [].concat.apply([], data).filter((dataFilter) => dataFilter.address.city !== 'Bielefeld');
+        var filteredData =  this.flattenArray(data).filter((dataFilter) => dataFilter.address.city !== 'Bielefeld');
         /* Wanted to use .flat() of javascript which flattens the array but it throws error
            when running the test case since it only works with latest browser hence not using it 
         */
